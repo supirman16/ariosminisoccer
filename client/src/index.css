@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Menerapkan font Inter ke seluruh elemen body */
+body {
+  font-family: 'Inter', sans-serif;
+}
