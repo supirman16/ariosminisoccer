@@ -397,9 +397,9 @@ const HomePage = ({ setView }) => {
                                 >
                                     <div className="relative group overflow-hidden rounded-lg border border-white/10 hover:border-yellow-400 transition-all duration-300">
                                         <img src={image.src} alt={image.alt} className="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500" />
-                                        <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 text-left">
-                                            <h4 className="text-yellow-400 font-bold text-base translate-y-3 group-hover:translate-y-0 transition duration-300">{image.title}</h4>
-                                            <p className="text-white text-xs mt-1 line-clamp-3 translate-y-3 group-hover:translate-y-0 transition duration-300 delay-75">{image.description || 'Tidak ada deskripsi.'}</p>
+                                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 text-left pt-12">
+                                            <h4 className="text-yellow-400 font-bold text-sm translate-y-0 md:translate-y-3 md:group-hover:translate-y-0 transition duration-300">{image.title}</h4>
+                                            <p className="text-white text-xs mt-1 line-clamp-2 translate-y-0 md:translate-y-3 md:group-hover:translate-y-0 transition duration-300 delay-75">{image.description || 'Tidak ada deskripsi.'}</p>
                                         </div>
                                     </div>
                                 </div>
