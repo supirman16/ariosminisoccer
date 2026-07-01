@@ -189,7 +189,7 @@ const HomePage = ({ setView }) => {
 
     const galleryImages = React.useMemo(() => {
         const photos = galleryItems.filter(item => item.type === 'photo');
-        if (photos.length === 0 && !isLoadingGallery) {
+        if (photos.length === 0) {
             return DEFAULT_PHOTOS;
         }
         return photos.map(item => ({
@@ -198,11 +198,11 @@ const HomePage = ({ setView }) => {
             title: item.title,
             description: item.description
         }));
-    }, [galleryItems, isLoadingGallery, DEFAULT_PHOTOS]);
+    }, [galleryItems, DEFAULT_PHOTOS]);
 
     const galleryVideos = React.useMemo(() => {
         const videos = galleryItems.filter(item => item.type === 'video');
-        if (videos.length === 0 && !isLoadingGallery) {
+        if (videos.length === 0) {
             return DEFAULT_VIDEOS;
         }
         return videos.map(item => ({
@@ -210,7 +210,7 @@ const HomePage = ({ setView }) => {
             title: item.title,
             description: item.description
         }));
-    }, [galleryItems, isLoadingGallery, DEFAULT_VIDEOS]);
+    }, [galleryItems, DEFAULT_VIDEOS]);
     
     const [modalImage, setModalImage] = useState(null);
     const testimonials = [
