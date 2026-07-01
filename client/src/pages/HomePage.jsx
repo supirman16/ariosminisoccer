@@ -18,13 +18,28 @@ import 'swiper/css/navigation';
 // Komponen untuk membungkus setiap bagian dengan animasi saat scroll
 const AnimatedSection = ({ children, className = '' }) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0.2 });
+    const isInView = useInView(ref, { once: true, amount: 0.05 });
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        if (isInView) {
+            setIsVisible(true);
+        }
+    }, [isInView]);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsVisible(true);
+        }, 1000);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 60 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className={className}
         >
             {children}
